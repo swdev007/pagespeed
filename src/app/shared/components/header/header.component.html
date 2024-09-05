@@ -1,13 +1,25 @@
 <header class="header">
   <div class="container flex-wrap align-center justify-between">
     <a class="header__logo">
-      <img src="assets/images/logo.svg" loading="lazy" alt="NobleQuote" />
+      <img
+        src="assets/images/logo.svg"
+        width="272px"
+        height="65px"
+        alt="NobleQuote"
+      />
     </a>
 
-    <a class="header__toggle" [ngClass]="{'active':displayMenu}" (click)="displayMenu = !displayMenu">
+    <a
+      class="header__toggle"
+      [ngClass]="{ active: displayMenu }"
+      (click)="displayMenu = !displayMenu"
+    >
       <span></span>
     </a>
-    <div class="header__menu flex-wrap align-center" [ngClass]="{'active':displayMenu}">
+    <div
+      class="header__menu flex-wrap align-center"
+      [ngClass]="{ active: displayMenu }"
+    >
       <nav>
         <ul class="flex-wrap">
           <li *ngFor="let item of menu">
@@ -16,7 +28,14 @@
               <in-icon [name]="'chevron-down'"></in-icon>
             </a>
 
-            <div *ngIf="item.children" [id]="item.id+'-dropdown'" [style]="'max-height:' + (menuActive && menuId === item.id ? dropDownHeight : '0px')">
+            <div
+              *ngIf="item.children"
+              [id]="item.id + '-dropdown'"
+              [style]="
+                'max-height:' +
+                (menuActive && menuId === item.id ? dropDownHeight : '0px')
+              "
+            >
               <a *ngFor="let childItem of item.children">{{
                 childItem.label
               }}</a>
