@@ -1,1 +1,78 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="container">
+    <div class="flex-wrap justify-between">
+      <div class="footer__block">
+        <img
+          src="assets/images/logo-footer.svg"
+          width="180px"
+          height="70px"
+          loading="lazy"
+          alt="Logo"
+        />
+        <div class="footer__block-social flex-wrap align-center">
+          <a href="https://twitter.com/noblequoteusa" aria-label="twitter">
+            <in-icon [name]="'twitter'"></in-icon>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/noblequote"
+            aria-label="linkedin"
+          >
+            <in-icon [name]="'linkedin'"></in-icon>
+          </a>
+          <a
+            href="https://www.facebook.com/getanoblequote"
+            aria-label="facebook"
+          >
+            <in-icon [name]="'facebook-f'"></in-icon>
+          </a>
+          <a
+            href="https://www.instagram.com/noblequoteusa"
+            aria-label="instagram"
+          >
+            <in-icon [name]="'instagram'"></in-icon>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__nav" *ngFor="let section of footerList">
+        <h4>{{ section.title }}</h4>
+        <ul>
+          <ng-container *ngFor="let item of section.items">
+            <li>
+              <a href="tel:800-474-1308">{{ item.name }}</a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>
+        Copyright 2023 Noble Consumer Protection, LLC. All Rights Reserved.
+        Disclosure: A Vehicle Service Contract (VSC) is often referred to as an
+        “auto warranty” or an “extended car warranty,” but it is not a warranty.
+        A VSC does, however, provide repair coverage for your vehicle after the
+        manufacturer's car warranty expires. A VSC is a contract between you and
+        a VSC provider or administrator that states what is a covered repair and
+        what is not. Not all vehicles qualify for coverage. NobleQuote does not
+        offer VSCs in California or Florida.
+      </p>
+      <p>
+        Vehicle images, logos, brands, & other trademarks featured or referred
+        to within NOBLEQUOTE<small>SM</small> and Noble Consumer Protection are
+        property of their respective trademark holders.
+      </p>
+    </div>
+    <div class="footer__scroll">
+      <div class="container flex justify-end">
+        <span class="flex align-center justify-center">
+          <img
+            src="assets/images/arrow-up.svg"
+            width="100px"
+            height="100px"
+            alt="icon"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>

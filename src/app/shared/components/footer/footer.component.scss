@@ -1,0 +1,115 @@
+@import '../../../../assets/scss/variables.scss';
+.footer {
+    padding: 100px 0 40px;
+    position: relative;
+    background: $color-black;
+    @include max-screen($tablet) {
+        padding: 50px 0 30px;
+        margin-top: -10px;
+    }
+    &__block {
+        width: 250px;
+        @include max-screen($tablet) {
+            width: 180px;
+            margin: 0 auto 30px;
+        }
+        img {
+            max-width: 180px;
+        }
+        &-social {
+            gap: 0 18px;
+            margin-top: 38px;
+            @include max-screen($tablet) {
+                margin-top: 25px;
+            }
+            in-icon {
+                width: 25px;
+                height: 25px;
+                &:hover {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+    &__nav {
+        @include max-screen($tablet) {
+            width: 100%;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h4 {
+            font-size: 16px;
+            color: $color-primary-light-400;
+        }
+        a {
+            font-weight: 300;
+            margin-top: 10px;
+            color: $color-white;
+            display: inline-block;
+            text-decoration: none;
+            &:hover {
+                color: $color-primary-light-400;
+            }
+        }
+    }
+    &__bottom {
+        text-align: center;
+        position: relative;
+        margin-top: 70px;
+        padding-top: 32px;
+        @include max-screen($tablet) {
+            margin-top: 20px;
+        }
+        &::before {
+            top: 0;
+            content: '';
+            left: -50px;
+            height: 1px;
+            opacity: 0.4;
+            right: -50px;
+            position: absolute;
+            background-color: $color-primary-light-400;
+            @include max-screen(1380px) {
+                left: -20px;
+                right: -20px;
+            }
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 300;
+            color: $color-white;
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__scroll {
+        left: 0;
+        z-index: 1;
+        top: -40px;
+        width: 100%;
+        position: absolute;
+        @include max-screen($tablet) {
+            top: -27px;
+        }
+        span {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            border-radius: 50%;
+            background: $color-primary-light-400;
+            @include max-screen($tablet) {
+                width: 55px;
+                height: 55px;
+            }
+            img {
+                max-width: 32px;
+                @include max-screen($tablet) {
+                    max-width: 22px;
+                }
+            }
+        }
+    }
+}
