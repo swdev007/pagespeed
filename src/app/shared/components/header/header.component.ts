@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { IconsModule } from "../../icons/icons.module";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconsModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

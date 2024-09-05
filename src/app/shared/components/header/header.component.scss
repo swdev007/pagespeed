@@ -1,7 +1,8 @@
 @import '../../../../assets/scss/variables.scss';
 .header {
-    padding: 24px 0;
+    padding: 34px 0;
     @include max-screen($desktop) {
+        padding: 24px 0;
         background-color: $color-primary-500;
     }
     @include max-screen($mobile) {
@@ -27,7 +28,7 @@
         ul {
             li {
                 position: relative;
-                margin-right: 30px;
+                margin-right: 22px;
                 @include max-screen($desktop) {
                     margin: 0 0 20px;
                     width: 100%;
@@ -36,7 +37,13 @@
                     font-size: 18px;
                     font-weight: 500;
                     color: $color-white;
+                    align-items: center;
+                    display: inline-flex;
                     transition: 0.3s ease-in-out;
+                    in-icon {
+                        width: 12px;
+                        margin: 0 0 -2px 5px;
+                    }
                 }
                 div {
                     padding: 8px 0;
@@ -92,8 +99,11 @@
         }
     }
     &__contact {
+        margin-left: 15px;
         @include max-screen($desktop) {
             width: 100%;
+            display: block;
+            margin-left: 0;
         }
         a {
             font-size: 18px;
