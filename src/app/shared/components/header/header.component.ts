@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { IconsModule } from "../../icons/icons.module";
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { Component, Inject } from '@angular/core';
+import { IconsModule } from '../../icons/icons.module';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +10,15 @@ import { IconsModule } from "../../icons/icons.module";
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  displayMenu: boolean = false;
+  menuId: string | undefined;
+  menuActive = false;
+  dropDownHeight = '0px';
   menu: any[] = [
     {
       label: 'Coverage Plans',
       link: '',
+      id: 'coverage',
       children: [
         {
           label: 'Our Plans',
@@ -48,6 +53,7 @@ export class HeaderComponent {
     {
       label: 'Help & Support',
       link: '',
+      id: 'help_support',
       children: [
         {
           label: 'Contact Us',
@@ -70,6 +76,7 @@ export class HeaderComponent {
     {
       label: 'Resources',
       link: '',
+      id: 'resource',
       children: [
         {
           label: 'Learning Center',
@@ -94,4 +101,19 @@ export class HeaderComponent {
       ],
     },
   ];
+
+  constructor(@Inject(DOCUMENT) private document: Document) {}
+
+  menuToggle(menuId: string) {
+    if (this.menuActive) {
+      if (this.menuId === menuId) {
+        this.menuActive = false;
+      }
+    } else {
+      this.menuActive = true;
+    }
+    const elm = this.document.getElementById(`${menuId}-dropdown`);
+    this.dropDownHeight = `${elm?.scrollHeight}px`;
+    this.menuId = menuId;
+  }
 }
