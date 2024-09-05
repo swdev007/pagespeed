@@ -4,11 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && npm run gzip",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:pagespeed": "node dist/pagespeed/server/server.mjs",
-    "gzip": "rm -rf ./dist/*-gzip && gzipper compress ./dist"
+    "gzip": "gzipper compress ./dist"
   },
   "private": true,
   "dependencies": {
