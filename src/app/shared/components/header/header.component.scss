@@ -9,16 +9,18 @@
         padding: 20px 0;
     }
     &__logo {
-        width: 272px;
-        margin-top: -13px;
-        @include max-screen($desktop-xl) {
-            width: 220px;
-        }
-        @include max-screen($desktop) {
-            margin-top: 0;
-        }
-        @include max-screen($tablet) {
-            max-width: 170px;
+        img {
+            width: 272px;
+            margin-top: -13px;
+            @include max-screen($desktop-xl) {
+                width: 220px;
+            }
+            @include max-screen($desktop) {
+                margin-top: 0;
+            }
+            @include max-screen($tablet) {
+                max-width: 170px;
+            }
         }
     }
     nav {
