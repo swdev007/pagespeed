@@ -1,0 +1,52 @@
+.button {
+    gap: 5px;
+    border: 0;
+    z-index: 1;
+    height: 60px;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+    appearance: none;
+    user-select: none;
+    position: relative;
+    color: $color-white;
+    align-items: center;
+    border-radius: 60px;
+    white-space: nowrap;
+    display: inline-flex;
+    padding: 5px 30px 7px;
+    justify-content: center;
+    text-transform: capitalize;
+    transition: 0.3s ease-in-out;
+    font-family: $font-family-base;
+    background: linear-gradient(94deg, #0F6CC2 0.21%, #B362FF 102.77%, #CB93FF 102.77%);
+    @include max-screen($mobile) {
+        height: 45px;
+    }
+    &:hover {
+        color: $color-black;
+    }
+    &+.button {
+        margin-left: 10px;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        background-color: $color-gray-100;
+    }
+    &.white {
+        color: $color-black;
+        background: $color-white;
+        &:hover {
+            color: $color-primary-light-500;
+        }
+    }
+    &.md {
+        height: 50px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    &.isFull {
+        width: 100%;
+    }
+}

@@ -1,0 +1,35 @@
+$color-primary-400: #376189;
+$color-primary-500: #0b4e8c;
+$color-primary-600: #0a477f;
+$color-primary-700: #052b4d;
+$color-primary-800: #06213b;
+$color-primary-900: #062B4D;
+$color-primary-light-200: #cce1f7;
+$color-primary-light-300: #b5d3f3;
+$color-primary-light-500: #90bded;
+$color-gray-100: #cbd0d4;
+$color-gray-200: #f4f4f4;
+$color-gray-300: #e5e5e5;
+$color-white: #fff;
+$color-black: #000;
+
+// base
+$font-size-base: 16px;
+$line-height-base: 1.4;
+$font-family-base: "Mark Pro", sans-serif;
+
+// breakpoints
+$small: 575px;
+$mobile: 767px;
+$tablet: 1023px;
+$desktop: 1199px;
+$desktop-lg: 1366px;
+
+// utilities
+$radius: 10px;
+
+// image path
+$imgPath: "/assets/images/";
+
+// mixins
+@import "mixins";

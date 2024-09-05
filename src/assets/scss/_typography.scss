@@ -1,0 +1,78 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+    line-height: 1.2;
+}
+h1 {
+    font-size: 50px;
+    @include max-screen($desktop) {
+        font-size: 45px;
+    }
+    @include max-screen($tablet) {
+        font-size: 35px;
+    }
+    @include max-screen($mobile) {
+        font-size: 28px;
+    }
+}
+h2 {
+    font-size: 40px;
+    @include max-screen($desktop) {
+        font-size: 35px;
+    }
+    @include max-screen($tablet) {
+        font-size: 30px;
+    }
+    @include max-screen($mobile) {
+        font-size: 26px;
+    }
+}
+h3 {
+    font-size: 35px;
+    @include max-screen($desktop) {
+        font-size: 32px;
+    }
+    @include max-screen($tablet) {
+        font-size: 28px;
+    }
+    @include max-screen($mobile) {
+        font-size: 24px;
+    }
+}
+h4 {
+    font-size: 30px;
+    @include max-screen($desktop) {
+        font-size: 30px;
+    }
+    @include max-screen($tablet) {
+        font-size: 26px;
+    }
+    @include max-screen($mobile) {
+        font-size: 22px;
+    }
+}
+h5 {
+    font-size: 25px;
+    @include max-screen($desktop) {
+        font-size: 22px;
+    }
+    @include max-screen($tablet) {
+        font-size: 20px;
+    }
+    @include max-screen($mobile) {
+        font-size: 18px;
+    }
+}
+h6 {
+    font-size: 20px;
+    @include max-screen($tablet) {
+        font-size: 18px;
+    }
+    @include max-screen($mobile) {
+        font-size: 16px;
+    }
+}
