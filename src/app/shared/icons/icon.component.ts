@@ -1,11 +1,7 @@
 /* eslint-disable @angular-eslint/no-host-metadata-property */
 import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, Input, ElementRef, Attribute, isDevMode } from '@angular/core';
 import { IconService } from './icon.service';
-import { CommonModule } from '@angular/common';
-
 @Component({
-  standalone: true,
-  imports: [CommonModule],
   selector: 'in-icon[name]',
   exportAs: 'inIcon',
   template: `<ng-content></ng-content>`,
