@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -68,6 +69,28 @@ export class HeaderComponent {
     {
       label: 'Resources',
       link: '',
+      children: [
+        {
+          label: 'Learning Center',
+          link: ',',
+        },
+        {
+          label: 'Learning Center Authors',
+          link: ',',
+        },
+        {
+          label: 'Frequently Asked Questions',
+          link: ',',
+        },
+        {
+          label: 'Sample Contract',
+          link: ',',
+        },
+        {
+          label: 'Glossary',
+          link: ',',
+        },
+      ],
     },
   ];
 }

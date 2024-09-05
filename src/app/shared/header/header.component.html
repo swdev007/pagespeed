@@ -1,7 +1,33 @@
 <header class="header">
-  <div class="container">
+  <div class="container flex-wrap align-center justify-between">
     <a class="header__logo">
       <img src="assets/images/logo.svg" alt="NobleQuote" />
     </a>
+
+    <a class="header__toggle">
+      <span></span>
+    </a>
+    <div class="header__menu flex-wrap align-center">
+      <nav>
+        <ul class="flex-wrap">
+          <li *ngFor="let item of menu">
+            <a>
+              {{ item.label }}
+              <!-- <in-icon [name]="'chevron-down'"></in-icon> -->
+            </a>
+
+            <div *ngIf="item.children">
+              <a *ngFor="let childItem of item.children">{{
+                childItem.label
+              }}</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__tel">
+        <a href="tel:(866)9549434"> (866) 954-9434</a>
+        <button class="button white md">Get a quote</button>
+      </div>
+    </div>
   </div>
 </header>
