@@ -1,0 +1,65 @@
+.email-form {
+    font-family: var(--font-base);
+    max-width: 538px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 30px;
+    @media (max-width: 992px) {
+        max-width: initial;
+        padding: 20px 16px;
+    }
+    &__item {
+        gap: 20px !important;
+        margin-bottom: 20px;
+        @media (max-width: 992px) {
+            gap: 15px !important;
+        }
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        @media (max-width: 992px) {
+            font-size: 16px;
+            margin-bottom: 21px;
+        }
+    }
+    &__form-group {
+        flex: 1;
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            color: #000000;
+            margin-bottom: 7px;
+            @media (max-width: 992px) {
+                font-size: 12px;
+            }
+        }
+    }
+    &__button {
+        font-weight: 500;
+        background: linear-gradient(94deg, #0F6CC2 0.21%, #B362FF 102.77%, #CB93FF 102.77%);
+        @media (max-width: 992px) {
+            height: 42px;
+            padding: 12px !important;
+        }
+    }
+    input {
+        background: #EEF0F1;
+        border: 1px solid #EFEFEF;
+        height: 50px;
+        border-radius: 12px;
+        padding: 0 18px;
+        @media (max-width: 992px) {
+            height: 40px;
+            padding: 12px 11px;
+            font-size: 14px;
+        }
+    }
+}

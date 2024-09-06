@@ -1,15 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable,PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GtmService {
-  
   private gtmId = 'GTMR8D15F53W';
+  isBrowser: boolean;
 
-  constructor() { }
+  constructor( @Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   public loadGtm(): void {
+    if(!this.isBrowser){
+      return;
+    }
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtm.js?id=${this.gtmId}`;

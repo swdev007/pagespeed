@@ -1,0 +1,137 @@
+<div class="email-form" #form>
+  <h6 class="email-form__title text-black">Get Your Free Quote</h6>
+  <form *ngIf="sendEmailForm" [formGroup]="sendEmailForm">
+    <div class="email-form__item gap-3 d-flex justify-content-between align-items-start flex-lg-row flex-column">
+      <div class="email-form__form-group">
+        <label for="firstName">First Name (Required)</label>
+        <input id="firstName" class="form-control" type="text" placeholder="Your First Name"
+          formControlName="firstName" [ngClass]="{
+              'is-invalid':
+                sendEmailForm.controls['firstName'].invalid &&
+                (sendEmailForm.controls['firstName'].dirty || sendEmailForm.controls['firstName'].touched)
+            }" />
+        <div class="invalid-feedback">First Name is required</div>
+      </div>
+      <div class="email-form__form-group">
+        <label for="lastName">Last Name (Required)</label>
+        <input id="lastName" class="form-control" type="text" placeholder="Your Last Name"
+          formControlName="lastName" [ngClass]="{
+              'is-invalid':
+                sendEmailForm.controls['lastName'].invalid &&
+                (sendEmailForm.controls['lastName'].dirty || sendEmailForm.controls['lastName'].touched)
+            }" />
+        <div class="invalid-feedback">Last Name is required</div>
+      </div>
+    </div>
+    <div class="email-form__item gap-3 d-flex justify-content-between align-items-start flex-lg-row flex-column">
+      <div class="email-form__form-group">
+        <label for="email">Email Address (Required)</label>
+        <input id="email" class="form-control" type="email" placeholder="i.e. you@mail.com"
+          formControlName="email" [ngClass]="{
+              'is-invalid':
+                sendEmailForm.controls['email'].invalid &&
+                (sendEmailForm.controls['email'].dirty || sendEmailForm.controls['email'].touched)
+            }" />
+        <div class="invalid-feedback">
+          <p class="m-0" *ngIf="sendEmailForm.controls['email'].errors?.['required']">Email Address is required</p>
+          <p class="m-0" *ngIf="sendEmailForm.controls['email'].errors?.['email']">
+            Please write a correct email address
+          </p>
+        </div>
+      </div>
+      <div class="email-form__form-group">
+        <label for="number">Phone Number</label>
+        <input id="number" class="form-control" type="text" maxlength="12" placeholder="i.e. 1234567890"
+          formControlName="phoneNumber" [ngClass]="{
+              'is-invalid':
+                sendEmailForm.controls['phoneNumber'].invalid &&
+                (sendEmailForm.controls['phoneNumber'].dirty || sendEmailForm.controls['phoneNumber'].touched)
+            }" />
+        <div class="invalid-feedback">
+          <p class="m-0" *ngIf="sendEmailForm.controls['phoneNumber'].errors?.['required']">Phone number is required</p>
+          <p class="m-0" *ngIf="sendEmailForm.controls['phoneNumber'].errors?.['pattern']">Invalid phone number</p>
+        </div>
+      </div>
+    </div>
+    <div class="d-lg-block d-none">
+      <div class="email-form__item gap-3 d-flex justify-content-between align-items-start flex-lg-row flex-column">
+        <div class="email-form__form-group mt-0">
+          <label for="year-select_header">Year of Vehicle</label>
+          <!-- <ng-select #yearSelect (focus)="openSelect(yearSelect)" labelForId="year-select_header" [items]="years"
+            (change)="getMakesData($event)" bindLabel="name" bindValue="value" placeholder="Vehicle Year"
+            formControlName="sendEmailForm.controls['yearOfVehicle']" [ngClass]="{
+                'is-invalid':
+                  sendEmailForm.controls['yearOfVehicle'].invalid &&
+                  (sendEmailForm.controls['yearOfVehicle'].dirty || sendEmailForm.controls['yearOfVehicle'].touched)
+              }"></ng-select> -->
+
+          <div class="invalid-feedback">Year of vehicle is required</div>
+        </div>
+        <div class="email-form__form-group">
+          <label for="vehicle-select_header">Select the Make</label>
+          <!-- <ng-select #makeSelect (focus)="openSelect(makeSelect)" labelForId="vehicle-select_header" [items]="makes"
+            (change)="getModelData($event)" bindLabel="name" bindValue="value" placeholder="Select the Make"
+            formControlName="sendEmailForm.controls['makeOfVehicle']" [ngClass]="{
+                'is-invalid':
+                  sendEmailForm.controls['makeOfVehicle'].invalid &&
+                  (sendEmailForm.controls['makeOfVehicle'].dirty || sendEmailForm.controls['makeOfVehicle'].touched)
+              }"></ng-select> -->
+
+          <div class="invalid-feedback">Make of Vehicle is required</div>
+        </div>
+      </div>
+      <div class="email-form__item gap-3 d-flex justify-content-between align-items-start flex-lg-row flex-column">
+        <div class="email-form__form-group mt-0">
+          <label for="model-select_header">Model</label>
+          <!-- <ng-select #modelSelect (focus)="openSelect(modelSelect)" labelForId="model-select_header" [items]="models"
+            bindLabel="name" bindValue="value" placeholder="Select the Model"
+            formControlName="sendEmailForm.controls['model']" [ngClass]="{
+                'is-invalid':
+                  sendEmailForm.controls['model'].invalid &&
+                  (sendEmailForm.controls['model'].dirty || sendEmailForm.controls['model'].touched)
+              }"></ng-select> -->
+
+          <div class="invalid-feedback">Model is required</div>
+        </div>
+        <div class="email-form__form-group">
+          <label for="mileage-select_header">Mileage</label>
+          <input id="mileage-select_header" class="form-control" type="number" placeholder="Mileage"
+            formControlName="mileage" [ngClass]="{
+                'is-invalid':
+                  sendEmailForm.controls['mileage'].invalid &&
+                  (sendEmailForm.controls['mileage'].dirty || sendEmailForm.controls['mileage'].touched)
+              }" />
+          <div class="invalid-feedback">Mileage is required</div>
+          <p class="invalid-feedback" [class.d-block]="
+                sendEmailForm.controls['mileage'].touched &&
+                sendEmailForm.controls['mileage'].value &&
+                +sendEmailForm.controls['mileage'].value > 192000
+              ">
+            Mileage must be less than 192000
+          </p>
+        </div>
+      </div>
+      <!-- <div class="re-captcha-block">
+        <re-captcha id="recaptcha" formControlName="recaptcha" [ngClass]="{
+              'is-invalid': !sendEmailForm.controls['recaptcha'].value
+            }"></re-captcha>
+      </div> -->
+    </div>
+    <div class="d-grid">
+      <button (click)="submit()" [disabled]="sendEmailForm.invalid || loader" type="submit"
+        class="btn btn-main email-form__button mt-3 py-3 d-lg-block d-none">
+        Submit
+      </button>
+      <button (click)="saveData()" [disabled]=" sendEmailForm.invalid ||
+            loader
+          " type="submit"
+        class="btn btn-main email-form__button mt-3 py-3 d-lg-none d-block">
+        Submit
+      </button>
+    </div>
+    <p class="form-notice text-center text-black mb-0 fw-normal mt-3">
+      <small>By submitting this form, I agree to NobleQuote contacting me by phone, text or email to present available
+        coverage options for my vehicle. Please check your spam/junk email after requesting a quote.</small>
+    </p>
+  </form>
+</div>

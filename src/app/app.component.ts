@@ -5,6 +5,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { IconService } from './shared/icons/icon.service';
 import { GtmService } from './shared/services/gtm.service';
 import { BannerNavComponent } from './shared/components/banner-nav/banner-nav.component';
+import {provideHttpClient} from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,
