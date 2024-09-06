@@ -1,1 +1,30 @@
-<p>banner-with-form works!</p>
+<div class="banner-form">
+  <div class="container">
+    <div class="banner-form__header flex justify-content-between">
+      <div class="banner-form__header-content">
+        <div>
+          <h1 *ngIf="caption">
+            {{ caption }}
+          </h1>
+          <p *ngIf="description">
+            {{ description }}
+          </p>
+          <!-- <a
+            class="button banner-form__header-button"
+            [href]="link.url"
+            *ngIf="link.label"
+          >
+            {{ link.label }}
+          </a> -->
+        </div>
+
+        <picture class="banner-form__banner">
+          <img [src]="image" width="780px" height="390px" alt="Banner" />
+        </picture>
+      </div>
+      <div class="banner-form__form">
+        <ng-content select="[headerForm]"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

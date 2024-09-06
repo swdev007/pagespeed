@@ -2,7 +2,7 @@
 .header {
     padding: 34px 0;
     @include max-screen($desktop) {
-        padding: 24px 0;
+        padding: 20px 0;
         background-color: $color-primary-500;
     }
     @include max-screen($mobile) {
@@ -13,6 +13,7 @@
         color: $color-white;
         in-icon {
             width: 272px;
+            display: block;
             margin-top: -13px;
             @include max-screen($desktop-xl) {
                 width: 220px;
@@ -21,7 +22,7 @@
                 margin-top: 0;
             }
             @include max-screen($tablet) {
-                max-width: 170px;
+                width: 170px;
             }
         }
     }

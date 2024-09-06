@@ -1,0 +1,43 @@
+@import '../../../../assets/scss/variables.scss';
+.banner-nav {
+    height: 62px;
+    text-align: center;
+    position: relative;
+    background: $color-primary-400;
+    @include max-screen($desktop) {
+        margin-top: 40px;
+    }
+    @include max-screen($tablet) {
+        height: 46px;
+    }
+    @include max-screen($mobile) {
+        margin-top: 50px;
+    }
+    img {
+        top: -75px;
+        max-width: 158px;
+        position: absolute;
+        left: calc(50% - 348px);
+        @include max-screen($desktop) {
+            top: -61px;
+            max-width: 130px;
+            left: calc(50% - 258px);
+        }
+        @include max-screen($mobile) {
+            top: -58px;
+            max-width: 120px;
+            left: calc(50% - 140px);
+        }
+    }
+    span {
+        font-size: 26px;
+        font-weight: 900;
+        padding-left: 10px;
+        font-style: italic;
+        letter-spacing: -0.26px;
+        @include max-screen($mobile) {
+            font-size: 14px;
+            padding-left: 100px;
+        }
+    }
+}
