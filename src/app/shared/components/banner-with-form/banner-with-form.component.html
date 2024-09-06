@@ -1,7 +1,7 @@
 <div class="banner-form">
   <div class="container">
-    <div class="banner-form__header flex justify-content-between">
-      <div class="banner-form__header-content">
+    <div class="flex-wrap justify-content-between">
+      <div class="banner-form__content flex-column justify-between">
         <div>
           <h1 *ngIf="caption">
             {{ caption }}
@@ -9,13 +9,9 @@
           <p *ngIf="description">
             {{ description }}
           </p>
-          <!-- <a
-            class="button banner-form__header-button"
-            [href]="link.url"
-            *ngIf="link.label"
-          >
-            {{ link.label }}
-          </a> -->
+          <a class="button" [href]="buttonUrl" *ngIf="buttonLabel">
+            {{ buttonLabel }}
+          </a>
         </div>
 
         <picture class="banner-form__banner">

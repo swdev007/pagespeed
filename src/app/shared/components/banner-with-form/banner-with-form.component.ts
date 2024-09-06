@@ -14,4 +14,6 @@ export class BannerWithFormComponent {
   @Input() caption = '';
   @Input() description = '';
   @Input() image = '';
+  @Input() buttonLabel = '';
+  @Input() buttonUrl = '';
 }

@@ -9,4 +9,5 @@ import { QuoteFormComponent } from './components/quote-form/quote-form.component
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+}

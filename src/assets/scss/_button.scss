@@ -14,7 +14,8 @@
     border-radius: 60px;
     white-space: nowrap;
     display: inline-flex;
-    padding: 5px 30px 7px;
+    text-decoration: none;
+    padding: 5px 28px 7px;
     justify-content: center;
     text-transform: capitalize;
     transition: 0.3s ease-in-out;
@@ -30,6 +31,7 @@
         margin-left: 10px;
     }
     &:disabled {
+        opacity: 0.5;
         cursor: not-allowed;
         pointer-events: none;
         background-color: $color-gray-100;
