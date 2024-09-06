@@ -15,9 +15,20 @@
         </div>
 
         <picture class="banner-form__banner">
-          <source media="(min-width:1024px)" [srcset]="image" />
+          <img
+            [src]="imageMobile"
+            [srcset]="
+              image + ' 1200w,' + imageTab + ' 1024w,' + imageMobile + ' 767w'
+            "
+            sizes="(max-width: 355px) 767px, 
+            (max-width: 600px) 1024px, 
+            680px"
+            alt="Banner"
+          />
+
+          <!-- <source media="(min-width:1024px)" [srcset]="image" />
           <source media="(min-width:767px)" [srcset]="imageTab" />
-          <img [src]="imageMobile" width="682px" height="341px" alt="Banner" />
+          <img [src]="imageMobile" width="682px" height="341px" alt="Banner" /> -->
         </picture>
       </div>
       <div class="banner-form__form">
