@@ -11,7 +11,7 @@
     &__logo {
         width: 30px;
         color: $color-white;
-        img {
+        in-icon {
             width: 272px;
             margin-top: -13px;
             @include max-screen($desktop-xl) {

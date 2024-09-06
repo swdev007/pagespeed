@@ -10,6 +10,8 @@ import { MagnifyingGlass } from './svg/magnifying-glass';
 import { DollarSign } from './svg/dollar-sign';
 import { AngleDown } from './svg/angle-down';
 import { ChevronDown } from './svg/chevron-down';
+import { Logo } from './svg/logo';
+import { LogoFooter } from './svg/logo-footer';
 
 export const Icons = new Map([
   ['twitter', Twitter],
@@ -21,6 +23,8 @@ export const Icons = new Map([
   ['dollar-sign', DollarSign],
   ['angle-down', AngleDown],
   ['chevron-down', ChevronDown],
+  ['logo', Logo],
+  ['logo-footer', LogoFooter],
 ]);
 
 export const ICONS = new InjectionToken('ICONS');
