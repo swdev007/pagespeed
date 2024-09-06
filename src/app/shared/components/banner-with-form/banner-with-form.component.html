@@ -15,7 +15,9 @@
         </div>
 
         <picture class="banner-form__banner">
-          <img [src]="image" width="780px" height="390px" alt="Banner" />
+          <source media="(max-width:767px)" [srcset]="imageMobile" />
+          <source media="(max-width:1023px)" [srcset]="imageTab" />
+          <img [src]="image" width="780" height="390" alt="Banner" />
         </picture>
       </div>
       <div class="banner-form__form">
