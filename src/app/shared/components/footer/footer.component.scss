@@ -43,9 +43,11 @@
             font-size: 16px;
             color: $color-primary-light-400;
         }
+        span,
         a {
             font-weight: 300;
             margin-top: 10px;
+            cursor: pointer;
             color: $color-white;
             display: inline-block;
             text-decoration: none;

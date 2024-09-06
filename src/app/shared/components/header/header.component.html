@@ -1,16 +1,16 @@
 <header class="header">
   <div class="container flex-wrap align-center justify-between">
-    <a class="header__logo">
+    <div class="header__logo">
       <in-icon [name]="'logo'"></in-icon>
-    </a>
+    </div>
 
-    <a
+    <div
       class="header__toggle"
       [ngClass]="{ active: displayMenu }"
       (click)="displayMenu = !displayMenu"
     >
       <span></span>
-    </a>
+    </div>
     <div
       class="header__menu flex-wrap align-center"
       [ngClass]="{ active: displayMenu }"
@@ -18,10 +18,10 @@
       <nav>
         <ul class="flex-wrap">
           <li *ngFor="let item of menu">
-            <a (click)="menuToggle(item.id)">
+            <span (click)="menuToggle(item.id)">
               {{ item.label }}
               <in-icon [name]="'chevron-down'"></in-icon>
-            </a>
+            </span>
 
             <div
               *ngIf="item.children"
@@ -31,9 +31,9 @@
                 (menuActive && menuId === item.id ? dropDownHeight : '0px')
               "
             >
-              <a *ngFor="let childItem of item.children">{{
+              <span *ngFor="let childItem of item.children">{{
                 childItem.label
-              }}</a>
+              }}</span>
             </div>
           </li>
         </ul>

@@ -32,9 +32,14 @@
         <h4>{{ section.title }}</h4>
         <ul>
           <ng-container *ngFor="let item of section.items">
-            <li>
+            <li *ngIf="item.type; else links">
               <a href="tel:800-474-1308">{{ item.name }}</a>
             </li>
+            <ng-template #links>
+              <li>
+                <span [routerLink]="item.route">{{ item.name }}</span>
+              </li>
+            </ng-template>
           </ng-container>
         </ul>
       </div>

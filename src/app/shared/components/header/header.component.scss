@@ -37,10 +37,11 @@
                     margin: 0 0 20px;
                     width: 100%;
                 }
-                a {
+                span {
                     font-size: 18px;
                     font-weight: 500;
                     color: $color-white;
+                    cursor: pointer;
                     align-items: center;
                     display: inline-flex;
                     transition: 0.3s ease-in-out;
@@ -78,7 +79,7 @@
                             position: absolute;
                         }
                     }
-                    a {
+                    span {
                         display: block;
                         padding: 5px 9px;
                         white-space: nowrap;
@@ -92,7 +93,7 @@
                     }
                 }
                 &:hover {
-                    >a {
+                    >span {
                         color: $color-primary-light-400;
                     }
                     >div {
@@ -111,6 +112,7 @@
             margin-left: 0;
         }
         a {
+            cursor: pointer;
             font-size: 18px;
             font-weight: 700;
             margin-right: 30px;
